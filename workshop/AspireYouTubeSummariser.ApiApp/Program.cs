@@ -79,7 +79,9 @@ app.MapPost("/summarise", async ([FromBody] SummaryRequest req, YouTubeSummarise
 
 app.Run();
 
-public DateOnly Date { get; set; }
+public class WeatherForecast
+{
+    public DateOnly Date { get; set; }
     public int TemperatureC { get; set; }
     public string Summary { get; set; }
 
@@ -91,6 +93,7 @@ public DateOnly Date { get; set; }
         TemperatureC = temperatureC;
         Summary = summary;
     }
+}
 
 record SummaryRequest(string? YouTubeLinkUrl, string VideoLanguageCode, string? SummaryLanguageCode);
 
